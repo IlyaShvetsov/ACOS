@@ -17,10 +17,10 @@ void scan_one_file(char *name, int *total_str, int *total_wrd, int *total_smb) {
     while (read(fid, &ch, 1) > 0) {
         if (ch == '\n') {
             strings++;
-		}
+        }
         if (ch == ' ' || ch == '\n' || ch == '\t') {
             ok = true;
-		}
+        }
         if (ok && !(ch == ' ' || ch == '\n' || ch == '\t')) {
             words++;
             ok = false;
@@ -45,23 +45,23 @@ void wc(int argc, char *argv[]) {
     }
     if (argc != 2) {
         printf("%s%i, %i, %i\n", "total : ", total_str, total_wrd, total_smb);
-	}
+    }
 }
 
 
 
 int main(int argc, char *argv[]) {
-	if (argc == 1) {
+    if (argc == 1) {
         int strings = 0, words = 0, symbols = 0;
         char ch;
         bool ok = true;
-		while (read(0, &ch, 1) > 0) {
+        while (read(0, &ch, 1) > 0) {
             if (ch == '\n') {
                 strings++;
-			}
+            }
             if (ch == ' ' || ch == '\n' || ch == '\t') {
                 ok = true;
-			}
+            }
             if (ok && !(ch == ' ' || ch == '\n' || ch == '\t')) {
                 words++;
                 ok = false;
@@ -71,6 +71,6 @@ int main(int argc, char *argv[]) {
         printf("\t%i\t%i\t%i\n", strings, words, symbols);
     } else {
         wc(argc, argv);
-	}
+    }
     return 0;
 }

@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
     get_files_count(files_list);
     if (children_number > files_number) {
         children_number = files_number;
-	}
+    }
 
     files = (char**) malloc(files_number*sizeof(char*));
     read_files_names(files_list);
@@ -118,11 +118,11 @@ int main(int argc, char *argv[]) {
                 char *str_temp = (char*) malloc(bufferSize);
                 for ( ; j < strlen(files[i]); ++j) {
                     str_temp[j] = files[i][j];
-				}
+                }
                 str_temp[j++] = ':';
                 for (int k = j; k < len + j; ++k) {
                     str_temp[k] = str[k-j];
-				}
+                }
 
                 bool is_dublicate = false;
                 for (int j = 0; j < counter; ++j) {
@@ -146,10 +146,10 @@ int main(int argc, char *argv[]) {
     }
     for (int i = 0; i < counter; ++i) {
         printf("%s", strings[i]);
-	}
+    }
     for (int i = 0; i < files_number; ++i) {
         free(files[i]);
-	}
+    }
     free(files);
     return 0;
 }
